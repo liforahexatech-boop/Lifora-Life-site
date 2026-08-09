@@ -2423,3 +2423,693 @@ document.addEventListener(
     );
 
 }
+
+/* =========================================
+   PART 8 - EMERGENCY CASE SIMULATION
+========================================= */
+
+
+let currentSimulationType = "";
+
+
+/* START SIMULATION */
+
+function startEmergencySimulation() {
+
+    const screen =
+        document.getElementById("simulationScreen");
+
+
+    const title =
+        document.getElementById("simulationCaseTitle");
+
+
+    const status =
+        document.getElementById("simulationStatus");
+
+
+    title.innerText =
+        "Patient Type Selection";
+
+
+    status.className =
+        "simulation-status active-simulation-status";
+
+
+    status.innerHTML = `
+        <span></span>
+        Case In Progress
+    `;
+
+
+    updateSimulationStep(1);
+
+
+    screen.innerHTML = `
+
+        <div class="simulation-choice">
+
+            <span>STEP 01 OF 05</span>
+
+            <h3>
+                Select Patient Condition
+            </h3>
+
+            <p>
+                Choose the appropriate identification process
+                according to the patient's condition.
+            </p>
+
+
+            <div class="patient-choice-buttons">
+
+
+                <button
+                    class="patient-choice-btn critical-choice"
+                    onclick="simulateCriticalPatient()"
+                >
+
+                    <div class="choice-icon">
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                    </div>
+
+
+                    <strong>
+                        Critical / Unconscious Patient
+                    </strong>
+
+
+                    <small>
+                        Use biometric authentication and iris
+                        recognition to quickly retrieve essential
+                        emergency information.
+                    </small>
+
+                </button>
+
+
+
+                <button
+                    class="patient-choice-btn noncritical-choice"
+                    onclick="simulateNonCriticalPatient()"
+                >
+
+                    <div class="choice-icon">
+
+                        <i class="fa-solid fa-qrcode"></i>
+
+                    </div>
+
+
+                    <strong>
+                        Non-Critical Patient
+                    </strong>
+
+
+                    <small>
+                        Use secure QR identification for faster
+                        access to emergency documentation.
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* CRITICAL PATIENT */
+
+function simulateCriticalPatient() {
+
+    currentSimulationType = "critical";
+
+
+    runIdentificationScan(
+        "Critical Patient",
+        "fa-fingerprint",
+        "Biometric and Iris Identification"
+    );
+
+}
+
+
+/* NON-CRITICAL PATIENT */
+
+function simulateNonCriticalPatient() {
+
+    currentSimulationType = "noncritical";
+
+
+    runIdentificationScan(
+        "Non-Critical Patient",
+        "fa-qrcode",
+        "Secure QR Identification"
+    );
+
+}
+
+
+/* IDENTIFICATION SCAN */
+
+function runIdentificationScan(
+    patientType,
+    icon,
+    scanMethod
+) {
+
+    const screen =
+        document.getElementById("simulationScreen");
+
+
+    const title =
+        document.getElementById(
+            "simulationCaseTitle"
+        );
+
+
+    title.innerText =
+        patientType;
+
+
+    updateSimulationStep(2);
+
+
+    screen.innerHTML = `
+
+        <div class="scanning-screen">
+
+            <div class="scanner-circle">
+
+                <i class="fa-solid ${icon}"></i>
+
+            </div>
+
+
+            <span class="verified-text">
+                IDENTIFICATION IN PROGRESS
+            </span>
+
+
+            <h3>
+                ${scanMethod}
+            </h3>
+
+
+            <p>
+                Lifora is securely processing the patient
+                identification request.
+            </p>
+
+        </div>
+
+    `;
+
+
+    setTimeout(() => {
+
+        showIdentificationSuccess(
+            patientType
+        );
+
+    }, 2500);
+
+}
+
+
+/* IDENTIFICATION SUCCESS */
+
+function showIdentificationSuccess(
+    patientType
+) {
+
+    const screen =
+        document.getElementById("simulationScreen");
+
+
+    screen.innerHTML = `
+
+        <div class="simulation-result">
+
+            <div class="simulation-result-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+
+            <span class="verified-text">
+                IDENTITY VERIFIED
+            </span>
+
+
+            <h3>
+                Patient Successfully Identified
+            </h3>
+
+
+            <p>
+                Essential emergency information is now available
+                to authorized healthcare personnel.
+            </p>
+
+
+            <button
+                class="simulation-next-btn"
+                onclick="simulateMedicalAccess()"
+            >
+
+                Access Emergency Information
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+/* ACCESS MEDICAL INFORMATION */
+
+function simulateMedicalAccess() {
+
+    const screen =
+        document.getElementById(
+            "simulationScreen"
+        );
+
+
+    updateSimulationStep(3);
+
+
+    screen.innerHTML = `
+
+        <div class="simulation-result">
+
+            <div class="simulation-result-icon">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+            </div>
+
+
+            <span class="verified-text">
+                AUTHORIZED ACCESS
+            </span>
+
+
+            <h3>
+                Emergency Profile Retrieved
+            </h3>
+
+
+            <p>
+                Essential medical information such as blood group,
+                allergies, medical history and emergency contact
+                details can now be reviewed.
+            </p>
+
+
+            <button
+                class="simulation-next-btn"
+                onclick="simulateEmergencyNotification()"
+            >
+
+                Notify Emergency Contact
+
+                <i class="fa-solid fa-bell"></i>
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    /* UPDATE PART 5 DASHBOARD */
+
+    if (typeof updateDashboardStatus === "function") {
+
+        updateDashboardStatus(
+            true,
+            true,
+            false
+        );
+
+    }
+
+
+    if (typeof activateStatusIndicators === "function") {
+
+        activateStatusIndicators();
+
+    }
+
+}
+
+
+/* NOTIFY CONTACT */
+
+function simulateEmergencyNotification() {
+
+    const screen =
+        document.getElementById(
+            "simulationScreen"
+        );
+
+
+    updateSimulationStep(4);
+
+
+    const hospitalName =
+        localStorage.getItem(
+            "liforaHospitalName"
+        ) || "Selected Hospital";
+
+
+    const hospitalLocation =
+        localStorage.getItem(
+            "liforaHospitalLocation"
+        ) || "Hospital Location";
+
+
+    screen.innerHTML = `
+
+        <div class="simulation-result">
+
+            <div class="simulation-result-icon">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </div>
+
+
+            <span class="verified-text">
+                EMERGENCY ALERT SENT
+            </span>
+
+
+            <h3>
+                Emergency Contact Notified
+            </h3>
+
+
+            <p>
+                The emergency contact has received the
+                hospital information:
+            </p>
+
+
+            <div class="simulation-hospital-preview">
+
+                <strong>
+                    <i class="fa-solid fa-hospital"></i>
+                    ${hospitalName}
+                </strong>
+
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    ${hospitalLocation}
+                </span>
+
+            </div>
+
+
+            <button
+                class="simulation-next-btn"
+                onclick="simulateConsentStep()"
+            >
+
+                Continue to Consent Process
+
+                <i class="fa-solid fa-file-signature"></i>
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    if (typeof updateDashboardStatus === "function") {
+
+        updateDashboardStatus(
+            true,
+            true,
+            true
+        );
+
+    }
+
+}
+
+
+/* CONSENT STEP */
+
+function simulateConsentStep() {
+
+    const screen =
+        document.getElementById(
+            "simulationScreen"
+        );
+
+
+    const status =
+        document.getElementById(
+            "simulationStatus"
+        );
+
+
+    updateSimulationStep(5);
+
+
+    status.className =
+        "simulation-status completed-simulation-status";
+
+
+    status.innerHTML = `
+        <span></span>
+        Workflow Completed
+    `;
+
+
+    screen.innerHTML = `
+
+        <div class="simulation-result">
+
+            <div class="simulation-result-icon">
+
+                <i class="fa-solid fa-file-signature"></i>
+
+            </div>
+
+
+            <span class="verified-text">
+                CONSENT PROCESS INITIATED
+            </span>
+
+
+            <h3>
+                Emergency Contact Can Reach the Hospital
+            </h3>
+
+
+            <p>
+                The emergency contact has been informed about
+                the patient's hospital location and can proceed
+                with the required documentation and written
+                consent process.
+            </p>
+
+
+            <button
+                class="simulation-next-btn"
+                onclick="resetEmergencySimulation()"
+            >
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Start New Emergency Case
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+/* UPDATE PROGRESS */
+
+function updateSimulationStep(
+    currentStep
+) {
+
+    for (
+        let i = 1;
+        i <= 5;
+        i++
+    ) {
+
+        const step =
+            document.getElementById(
+                "simStep" + i
+            );
+
+
+        if (!step) continue;
+
+
+        step.classList.remove(
+            "active",
+            "completed"
+        );
+
+
+        if (i < currentStep) {
+
+            step.classList.add(
+                "completed"
+            );
+
+        }
+
+        else if (i === currentStep) {
+
+            step.classList.add(
+                "active"
+            );
+
+        }
+
+
+        if (i < 5) {
+
+            const line =
+                document.getElementById(
+                    "simLine" + i
+                );
+
+
+            if (!line) continue;
+
+
+            if (i < currentStep) {
+
+                line.classList.add(
+                    "completed-line"
+                );
+
+            }
+
+            else {
+
+                line.classList.remove(
+                    "completed-line"
+                );
+
+            }
+
+        }
+
+    }
+
+}
+
+
+/* RESET SIMULATION */
+
+function resetEmergencySimulation() {
+
+    const screen =
+        document.getElementById(
+            "simulationScreen"
+        );
+
+
+    const title =
+        document.getElementById(
+            "simulationCaseTitle"
+        );
+
+
+    const status =
+        document.getElementById(
+            "simulationStatus"
+        );
+
+
+    currentSimulationType = "";
+
+
+    title.innerText =
+        "No Active Case";
+
+
+    status.className =
+        "simulation-status waiting-status";
+
+
+    status.innerHTML = `
+        <span></span>
+        Waiting to Start
+    `;
+
+
+    updateSimulationStep(1);
+
+
+    screen.innerHTML = `
+
+        <div class="simulation-welcome">
+
+            <div class="simulation-main-icon">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+
+            <span>
+                READY FOR DEMONSTRATION
+            </span>
+
+
+            <h3>
+                Start a New Emergency Case
+            </h3>
+
+
+            <p>
+                Select a patient condition to demonstrate how
+                Lifora guides the emergency response workflow.
+            </p>
+
+
+            <button
+                class="start-simulation-btn"
+                onclick="startEmergencySimulation()"
+            >
+
+                <i class="fa-solid fa-play"></i>
+
+                Start Emergency Case
+
+            </button>
+
+        </div>
+
+    `;
+
+}
