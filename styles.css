@@ -1169,7 +1169,1509 @@ footer > p {
     .hero-visual {
         min-height: 500px;
     }
+/* =========================================
+   LIFORA - PART 4
+   MODALS & EMERGENCY SCANNER STYLES
+========================================= */
 
+
+/* =========================================
+   MAIN MODAL
+========================================= */
+
+.lifora-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+}
+
+
+.lifora-modal.show-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(15, 15, 30, 0.65);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.modal-box {
+    width: 100%;
+    max-width: 580px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    position: relative;
+    z-index: 2;
+
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(30px) scale(0.96);
+
+    transition: 0.4s ease;
+}
+
+
+.show-modal .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+
+.modal-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.modal-box::-webkit-scrollbar-thumb {
+    background: #d5d2e8;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-modal {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #f5f5f8;
+
+    color: #333342;
+
+    font-size: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+
+    z-index: 20;
+}
+
+
+.close-modal:hover {
+    background: #ef4444;
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.modal-header {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #eeeeF5;
+
+    margin-bottom: 25px;
+}
+
+
+.modal-header span {
+    display: block;
+
+    color: #2563eb;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+}
+
+
+.modal-header h2 {
+    font-size: 28px;
+
+    line-height: 1.2;
+}
+
+
+.modal-icon {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 18px;
+
+    background: #fff0f0;
+
+    color: #ef4444;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+
+    flex-shrink: 0;
+}
+
+
+.blue-modal-icon {
+    background: #eef4ff;
+    color: #2563eb;
+}
+
+
+/* =========================================
+   CRITICAL PATIENT WARNING
+========================================= */
+
+.critical-warning {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    margin-bottom: 28px;
+
+    background: #fff4f4;
+
+    border: 1px solid #ffd6d6;
+
+    border-radius: 16px;
+
+    color: #a92e2e;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.critical-warning i {
+    color: #ef4444;
+
+    margin-top: 3px;
+
+    font-size: 17px;
+}
+
+
+.modal-box h3 {
+    font-size: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   SCAN OPTIONS
+========================================= */
+
+.scan-options {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.scan-option {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5ef;
+
+    border-radius: 18px;
+
+    text-align: left;
+
+    transition: 0.3s ease;
+}
+
+
+.scan-option:hover {
+    border-color: #5b4cc4;
+
+    transform: translateX(5px);
+
+    box-shadow:
+        0 15px 35px rgba(79, 70, 181, 0.1);
+}
+
+
+.scan-option-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0f0;
+
+    color: #ef4444;
+
+    font-size: 23px;
+}
+
+
+.scan-option-icon.iris {
+    background: #f0eeff;
+
+    color: #4f46b5;
+}
+
+
+.scan-option div:nth-child(2) {
+    flex: 1;
+}
+
+
+.scan-option strong {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+
+.scan-option p {
+    font-size: 11px;
+
+    color: #747485;
+}
+
+
+.scan-option > i {
+    color: #8b8b9b;
+}
+
+
+/* =========================================
+   SECURITY NOTE
+========================================= */
+
+.security-note {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border-radius: 13px;
+
+    background: #f7f7fa;
+
+    color: #747485;
+
+    font-size: 11px;
+}
+
+
+.security-note i {
+    color: #4f46b5;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   SCANNER SCREEN
+========================================= */
+
+.scanner-screen {
+    text-align: center;
+
+    padding: 20px 10px;
+}
+
+
+.scanner-title {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    background: #fff0f0;
+
+    color: #ef4444;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 30px;
+}
+
+
+.iris-title {
+    background: #f0eeff;
+
+    color: #4f46b5;
+}
+
+
+.scanner-status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    animation: scannerPulse 1.2s infinite;
+}
+
+
+@keyframes scannerPulse {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.6);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   FINGERPRINT SCANNER
+========================================= */
+
+.fingerprint-scanner {
+    width: 190px;
+    height: 190px;
+
+    margin: 0 auto 30px;
+
+    position: relative;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 30%,
+            #f5f3ff 31%,
+            #f5f3ff 70%,
+            #e8e4ff 71%
+        );
+
+    border: 2px solid #dcd7ff;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 15px #f7f6ff,
+        0 15px 40px rgba(79, 70, 181, 0.15);
+}
+
+
+.fingerprint-scanner > i {
+    position: relative;
+    z-index: 2;
+
+    font-size: 95px;
+
+    color: #4f46b5;
+}
+
+
+.scan-line {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ef4444,
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px #ef4444;
+
+    animation: fingerprintScan 2s linear infinite;
+
+    z-index: 3;
+}
+
+
+@keyframes fingerprintScan {
+
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        top: 0;
+    }
+
+}
+
+
+.scanner-screen h2 {
+    font-size: 26px;
+
+    margin-bottom: 12px;
+}
+
+
+.scanner-screen > p {
+    max-width: 400px;
+
+    margin: 0 auto 25px;
+
+    color: #747485;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   SCAN PROGRESS BAR
+========================================= */
+
+.scan-progress {
+    width: 100%;
+    height: 9px;
+
+    background: #eeeeF5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin: 20px 0 10px;
+}
+
+
+.scan-progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ef4444,
+            #ff8a8a
+        );
+
+    transition: width 0.15s linear;
+}
+
+
+.iris-progress {
+    background:
+        linear-gradient(
+            90deg,
+            #4f46b5,
+            #8175ff
+        );
+}
+
+
+.scan-percent {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #4f46b5;
+}
+
+
+/* =========================================
+   IRIS SCANNER
+========================================= */
+
+.iris-scanner {
+    width: 230px;
+    height: 180px;
+
+    margin: 0 auto 30px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.iris-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(79, 70, 181, 0.25);
+}
+
+
+.outer-circle {
+    width: 180px;
+    height: 180px;
+
+    animation: rotateCircle 7s linear infinite;
+}
+
+
+.middle-circle {
+    width: 125px;
+    height: 125px;
+
+    border-style: dashed;
+
+    animation: rotateCircleReverse 5s linear infinite;
+}
+
+
+.inner-circle {
+    width: 75px;
+    height: 75px;
+
+    background: rgba(79, 70, 181, 0.08);
+}
+
+
+.iris-scanner > i {
+    position: relative;
+
+    z-index: 4;
+
+    font-size: 55px;
+
+    color: #4f46b5;
+}
+
+
+@keyframes rotateCircle {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes rotateCircleReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+.iris-scan-line {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background:
+        linear-gradient(
+            #4f46b5,
+            transparent,
+            #4f46b5
+        );
+
+    box-shadow:
+        0 0 15px #4f46b5;
+
+    animation: irisScanMove 2s ease-in-out infinite;
+}
+
+
+@keyframes irisScanMove {
+
+    0% {
+        left: 20px;
+    }
+
+    50% {
+        left: calc(100% - 20px);
+    }
+
+    100% {
+        left: 20px;
+    }
+
+}
+
+
+/* =========================================
+   SUCCESS SCREEN
+========================================= */
+
+.success-screen {
+    text-align: center;
+
+    padding: 25px 5px;
+}
+
+
+.success-animation {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #eafbf0;
+
+    color: #22c55e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+
+    animation: successPop 0.6s ease;
+}
+
+
+@keyframes successPop {
+
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+.blue-success {
+    background: #eef4ff;
+
+    color: #2563eb;
+}
+
+
+.verified-text {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #eafbf0;
+
+    color: #159447;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+
+.blue-verified {
+    background: #eef4ff;
+
+    color: #2563eb;
+}
+
+
+.success-screen h2 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+
+.success-screen > p {
+    max-width: 430px;
+
+    margin: 0 auto 25px;
+
+    color: #747485;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PATIENT RECORD CARD
+========================================= */
+
+.patient-record-card {
+    margin: 25px 0;
+
+    border: 1px solid #e6e4ef;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    background: #fafaff;
+}
+
+
+.record-header {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    background: #f2f0ff;
+
+    color: #4f46b5;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.record-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.record-grid div {
+    padding: 17px;
+
+    border-right: 1px solid #eeeeF5;
+
+    border-bottom: 1px solid #eeeeF5;
+}
+
+
+.record-grid div:nth-child(2n) {
+    border-right: none;
+}
+
+
+.record-grid div:nth-last-child(-n + 2) {
+    border-bottom: none;
+}
+
+
+.record-grid span {
+    display: block;
+
+    color: #888896;
+
+    font-size: 10px;
+
+    margin-bottom: 4px;
+}
+
+
+.record-grid strong {
+    font-size: 12px;
+
+    color: #292937;
+}
+
+
+/* =========================================
+   CONTINUE BUTTON
+========================================= */
+
+.continue-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background: #4f46b5;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.continue-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(79, 70, 181, 0.25);
+}
+
+
+.blue-continue {
+    background: #2563eb;
+}
+
+
+/* =========================================
+   QR SCANNER
+========================================= */
+
+.modal-description {
+    color: #747485;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+.qr-scanner-box {
+    width: 260px;
+    height: 260px;
+
+    margin: 25px auto;
+
+    position: relative;
+
+    border-radius: 20px;
+
+    background: #f7f9ff;
+
+    border: 1px solid #dce5ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.qr-icon {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.12);
+
+    color: #2563eb;
+
+    font-size: 85px;
+}
+
+
+.qr-corners span {
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+    border-color: #2563eb;
+
+    border-style: solid;
+
+    z-index: 3;
+}
+
+
+.qr-corners span:nth-child(1) {
+    top: 18px;
+    left: 18px;
+
+    border-width: 4px 0 0 4px;
+}
+
+
+.qr-corners span:nth-child(2) {
+    top: 18px;
+    right: 18px;
+
+    border-width: 4px 4px 0 0;
+}
+
+
+.qr-corners span:nth-child(3) {
+    bottom: 18px;
+    left: 18px;
+
+    border-width: 0 0 4px 4px;
+}
+
+
+.qr-corners span:nth-child(4) {
+    bottom: 18px;
+    right: 18px;
+
+    border-width: 0 4px 4px 0;
+}
+
+
+.qr-scan-line {
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+
+    height: 3px;
+
+    background: #2563eb;
+
+    box-shadow:
+        0 0 15px #2563eb;
+
+    animation: qrScan 2s linear infinite;
+}
+
+
+@keyframes qrScan {
+
+    0% {
+        top: 15px;
+    }
+
+    50% {
+        top: calc(100% - 15px);
+    }
+
+    100% {
+        top: 15px;
+    }
+
+}
+
+
+.scan-qr-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.scan-qr-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.25);
+}
+
+
+.scan-qr-btn i {
+    margin-right: 8px;
+}
+
+
+.scan-qr-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   NOTIFICATION MODAL
+========================================= */
+
+.notification-top {
+    text-align: center;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #eeeeF5;
+}
+
+
+.notification-icon {
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 22px;
+
+    background: #fff8db;
+
+    color: #c79600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    animation: notificationFloat 2s ease-in-out infinite;
+}
+
+
+@keyframes notificationFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+.notification-top span {
+    display: inline-block;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #b28300;
+
+    margin-bottom: 10px;
+}
+
+
+.notification-top h2 {
+    font-size: 29px;
+
+    margin-bottom: 10px;
+}
+
+
+.notification-top p {
+    color: #747485;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   NOTIFICATION DETAILS
+========================================= */
+
+.notification-details {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+
+.notification-detail {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeF5;
+}
+
+
+.detail-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: #f0eeff;
+
+    color: #4f46b5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.notification-detail span {
+    display: block;
+
+    color: #888896;
+
+    font-size: 10px;
+
+    margin-bottom: 4px;
+}
+
+
+.notification-detail strong {
+    font-size: 12px;
+
+    color: #292937;
+}
+
+
+/* =========================================
+   ALERT MESSAGE PREVIEW
+========================================= */
+
+.message-preview {
+    padding: 18px;
+
+    background: #f6f6fb;
+
+    border-radius: 18px;
+
+    margin-bottom: 22px;
+}
+
+
+.message-title {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    color: #4f46b5;
+}
+
+
+.message-preview p {
+    font-size: 11px;
+
+    color: #747485;
+
+    line-height: 1.7;
+}
+
+
+.send-alert-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6c900,
+            #ffd942
+        );
+
+    color: #29220a;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+
+.send-alert-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(246, 201, 0, 0.25);
+}
+
+
+.send-alert-btn i {
+    margin-right: 8px;
+}
+
+
+/* =========================================
+   ALERT SUCCESS
+========================================= */
+
+.notification-success {
+    background: #fff8db;
+
+    color: #c79600;
+}
+
+
+.alert-summary {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: left;
+
+    padding: 18px;
+
+    background: #f7f7fa;
+
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+.alert-summary div {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 12px;
+
+    color: #555564;
+}
+
+
+.alert-summary i {
+    color: #22c55e;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   RESPONSIVE MODAL DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+
+    .lifora-modal {
+        padding: 10px;
+        align-items: flex-end;
+    }
+
+
+    .modal-box {
+        max-height: 92vh;
+
+        padding: 30px 20px;
+
+        border-radius: 25px 25px 18px 18px;
+    }
+
+
+    .modal-header h2 {
+        font-size: 23px;
+    }
+
+
+    .scanner-screen h2,
+    .success-screen h2,
+    .notification-top h2 {
+        font-size: 23px;
+    }
+
+
+    .fingerprint-scanner {
+        width: 160px;
+        height: 160px;
+    }
+
+
+    .fingerprint-scanner > i {
+        font-size: 75px;
+    }
+
+
+    .iris-scanner {
+        width: 190px;
+        height: 160px;
+    }
+
+
+    .outer-circle {
+        width: 155px;
+        height: 155px;
+    }
+
+
+    .middle-circle {
+        width: 105px;
+        height: 105px;
+    }
+
+
+    .qr-scanner-box {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    .qr-icon {
+        width: 110px;
+        height: 110px;
+
+        font-size: 70px;
+    }
+
+
+    .record-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .record-grid div {
+        border-right: none;
+
+        border-bottom: 1px solid #eeeeF5;
+    }
+
+
+    .record-grid div:last-child {
+        border-bottom: none;
+    }
+
+
+    .notification-detail strong {
+        font-size: 11px;
+    }
+
+}
     .patient-card {
         padding: 25px;
         min-height: 470px;
