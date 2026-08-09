@@ -2138,6 +2138,287 @@ function updateWorkflowStep(
 
             }
 
+           /* =========================================
+   PART 7 - EMERGENCY CONTACT MANAGEMENT
+========================================= */
+
+
+function openEmergencyContactForm() {
+
+    const existingModal =
+        document.getElementById("liforaModal");
+
+
+    if (existingModal) {
+
+        existingModal.remove();
+
+    }
+
+
+    const savedName =
+        localStorage.getItem("liforaContactName") || "";
+
+
+    const savedRelation =
+        localStorage.getItem("liforaContactRelation") || "";
+
+
+    const savedPhone =
+        localStorage.getItem("liforaContactPhone") || "";
+
+
+    const modal =
+        document.createElement("div");
+
+
+    modal.id = "liforaModal";
+
+    modal.className = "lifora-modal";
+
+
+    modal.innerHTML = `
+
+        <div class="modal-overlay"
+             onclick="closeLiforaModal()">
+        </div>
+
+
+        <div class="modal-box contact-form-modal">
+
+
+            <button class="close-modal"
+                    onclick="closeLiforaModal()">
+
+                &times;
+
+            </button>
+
+
+            <div class="contact-form-heading">
+
+                <div class="contact-form-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+
+                <span>EMERGENCY CONTACT</span>
+
+
+                <h2>Add Contact Details</h2>
+
+
+                <p>
+                    Add the registered emergency contact who should
+                    receive hospital and consent information.
+                </p>
+
+            </div>
+
+
+            <div class="contact-form">
+
+
+                <div class="form-group">
+
+                    <label>Contact Name</label>
+
+                    <input
+                        type="text"
+                        id="contactNameInput"
+                        placeholder="Enter full name"
+                        value="${savedName}"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Relationship</label>
+
+                    <input
+                        type="text"
+                        id="contactRelationInput"
+                        placeholder="Example: Parent / Spouse"
+                        value="${savedRelation}"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Phone Number</label>
+
+                    <input
+                        type="tel"
+                        id="contactPhoneInput"
+                        placeholder="Enter phone number"
+                        value="${savedPhone}"
+                    >
+
+                </div>
+
+
+                <button
+                    class="save-contact-btn"
+                    onclick="saveEmergencyContact()"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Emergency Contact
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(modal);
+
+
+    setTimeout(() => {
+
+        modal.classList.add("show-modal");
+
+    }, 10);
+
+}
+
+
+/* SAVE EMERGENCY CONTACT */
+
+function saveEmergencyContact() {
+
+    const name =
+        document.getElementById(
+            "contactNameInput"
+        ).value.trim();
+
+
+    const relation =
+        document.getElementById(
+            "contactRelationInput"
+        ).value.trim();
+
+
+    const phone =
+        document.getElementById(
+            "contactPhoneInput"
+        ).value.trim();
+
+
+    if (!name || !relation || !phone) {
+
+        alert(
+            "Please complete all emergency contact details."
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "liforaContactName",
+        name
+    );
+
+
+    localStorage.setItem(
+        "liforaContactRelation",
+        relation
+    );
+
+
+    localStorage.setItem(
+        "liforaContactPhone",
+        phone
+    );
+
+
+    updateEmergencyContactDisplay();
+
+
+    closeLiforaModal();
+
+}
+
+
+/* UPDATE CONTACT DISPLAY */
+
+function updateEmergencyContactDisplay() {
+
+    const name =
+        localStorage.getItem(
+            "liforaContactName"
+        ) || "Not Available";
+
+
+    const relation =
+        localStorage.getItem(
+            "liforaContactRelation"
+        ) || "Not Available";
+
+
+    const phone =
+        localStorage.getItem(
+            "liforaContactPhone"
+        ) || "Not Available";
+
+
+    const nameDisplay =
+        document.getElementById(
+            "emergencyContactName"
+        );
+
+
+    const relationDisplay =
+        document.getElementById(
+            "emergencyContactRelation"
+        );
+
+
+    const phoneDisplay =
+        document.getElementById(
+            "emergencyContactPhone"
+        );
+
+
+    if (nameDisplay) {
+        nameDisplay.innerText = name;
+    }
+
+
+    if (relationDisplay) {
+        relationDisplay.innerText = relation;
+    }
+
+
+    if (phoneDisplay) {
+        phoneDisplay.innerText = phone;
+    }
+
+}
+
+
+/* LOAD CONTACT ON WEBSITE START */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateEmergencyContactDisplay();
+
+    }
+);
         }
     );
 
