@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Lifora | Intelligent Emergency Healthcare</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" 
+          rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <span>Lifora</span>
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#how-it-works">How It Works</a>
+
+            <a href="#emergency">Emergency Access</a>
+
+            <a href="#about">About</a>
+
+            <a href="#developers">Our Team</a>
+
+        </nav>
+
+
+        <button class="nav-button"
+                onclick="document.getElementById('emergency').scrollIntoView()">
+
+            Emergency Access
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero" id="home">
+
+
+        <!-- LEFT CONTENT -->
+
+        <div class="hero-content">
+
+            <div class="status-badge">
+
+                <span class="pulse-dot"></span>
+
+                Intelligent Emergency Healthcare
+
+            </div>
+
+
+            <h1>
+
+                Treatment Shouldn't Wait For
+
+                <span>Documentation.</span>
+
+            </h1>
+
+
+            <p>
+
+                Lifora is an intelligent emergency healthcare platform
+                designed to reduce delays in patient identification and
+                documentation.
+
+                For unconscious critical patients, Lifora enables secure
+                identification through biometrics and iris scanning.
+                For non-critical patients, medical details can be accessed
+                quickly through QR-based identification.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn"
+                        onclick="document.getElementById('emergency').scrollIntoView()">
+
+                    Get Emergency Access
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <button class="secondary-btn"
+                        onclick="document.getElementById('how-it-works').scrollIntoView()">
+
+                    How Lifora Works
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="hero-stats">
+
+                <div class="stat">
+
+                    <h3>Critical</h3>
+
+                    <p>Biometric & Iris Access</p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>QR</h3>
+
+                    <p>Non-Critical Identification</p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>Instant</h3>
+
+                    <p>Emergency Contact Alert</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT VISUAL -->
+
+        <div class="hero-visual">
+
+
+            <!-- MAIN CARD -->
+
+            <div class="patient-card">
+
+                <div class="card-top">
+
+                    <div class="live-status">
+
+                        <span class="live-dot"></span>
+
+                        Emergency System Active
+
+                    </div>
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                </div>
+
+
+                <div class="medical-icon">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                </div>
+
+
+                <h2>Secure. Fast. Lifesaving.</h2>
+
+
+                <p>
+
+                    Access essential patient information
+                    when every second matters.
+
+                </p>
+
+
+                <div class="patient-info">
+
+                    <div class="info-row">
+
+                        <i class="fa-solid fa-fingerprint"></i>
+
+                        <span>Biometric Verification</span>
+
+                        <i class="fa-solid fa-circle-check success"></i>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        <span>Iris Recognition</span>
+
+                        <i class="fa-solid fa-circle-check success"></i>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <i class="fa-solid fa-qrcode"></i>
+
+                        <span>QR Medical Access</span>
+
+                        <i class="fa-solid fa-circle-check success"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FLOATING EMERGENCY CARD -->
+
+            <div class="floating-card emergency-float">
+
+                <div class="float-icon red-icon">
+
+                    <i class="fa-solid fa-phone-volume"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Emergency Contact</strong>
+
+                    <p>Notified Instantly</p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FLOATING HOSPITAL CARD -->
+
+            <div class="floating-card hospital-float">
+
+                <div class="float-icon blue-icon">
+
+                    <i class="fa-solid fa-hospital"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Hospital Location</strong>
+
+                    <p>Shared with Family</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EMERGENCY ACCESS SECTION
+    ========================== -->
+
+    <section class="emergency-section" id="emergency">
+
+
+        <div class="section-heading">
+
+            <div class="small-title">
+
+                <span></span>
+
+                EMERGENCY IDENTIFICATION
+
+            </div>
+
+
+            <h2>
+
+                Choose the Patient
+
+                <span>Condition</span>
+
+            </h2>
+
+
+            <p>
+
+                Lifora provides different identification methods depending
+                on the patient's emergency condition.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- PATIENT CONDITION CARDS -->
+
+        <div class="condition-grid">
+
+
+            <!-- CRITICAL PATIENT -->
+
+            <div class="condition-card critical-card">
+
+                <div class="condition-icon critical-icon">
+
+                    <i class="fa-solid fa-heart-crack"></i>
+
+                </div>
+
+
+                <div class="condition-tag">
+
+                    HIGH PRIORITY
+
+                </div>
+
+
+                <h3>Critical Patient</h3>
+
+
+                <p>
+
+                    For unconscious or unresponsive patients who
+                    cannot provide consent or medical information.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+
+                        <i class="fa-solid fa-fingerprint"></i>
+
+                        Biometric Identification
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Iris Scanner Verification
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-file-medical"></i>
+
+                        Instant Medical Record Access
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-bell"></i>
+
+                        Emergency Contact Notification
+
+                    </li>
+
+                </ul>
+
+
+                <button class="critical-btn"
+                        onclick="openCriticalPatient()">
+
+                    Critical Patient
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- NON-CRITICAL PATIENT -->
+
+            <div class="condition-card noncritical-card">
+
+                <div class="condition-icon noncritical-icon">
+
+                    <i class="fa-solid fa-user-check"></i>
+
+                </div>
+
+
+                <div class="condition-tag safe-tag">
+
+                    QUICK ACCESS
+
+                </div>
+
+
+                <h3>Non-Critical Patient</h3>
+
+
+                <p>
+
+                    For conscious and stable patients who can be
+                    identified quickly using secure QR technology.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+
+                        <i class="fa-solid fa-qrcode"></i>
+
+                        QR-Based Identification
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-file-medical"></i>
+
+                        Previous Medical Information
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-notes-medical"></i>
+
+                        Faster Documentation
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        Reduced Waiting Time
+
+                    </li>
+
+                </ul>
+
+
+                <button class="noncritical-btn"
+                        onclick="openNonCriticalPatient()">
+
+                    Non-Critical Patient
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- EMERGENCY CONTACT -->
+
+            <div class="condition-card contact-card">
+
+                <div class="condition-icon contact-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </div>
+
+
+                <div class="condition-tag notification-tag">
+
+                    AUTOMATED ALERT
+
+                </div>
+
+
+                <h3>Notify Emergency Contact</h3>
+
+
+                <p>
+
+                    Automatically inform the patient's emergency
+                    contact about their hospital admission and location.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+
+                        <i class="fa-solid fa-hospital"></i>
+
+                        Hospital Name
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Hospital Location
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        Emergency Notification
+
+                    </li>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-file-signature"></i>
+
+                        Written Consent Information
+
+                    </li>
+
+                </ul>
+
+
+                <button class="contact-btn"
+                        onclick="notifyEmergencyContact()">
+
+                    Notify Contact
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HOW LIFORA WORKS
+    ========================== -->
+
+    <section class="how-section" id="how-it-works">
+
+
+        <div class="section-heading">
+
+            <div class="small-title">
+
+                <span></span>
+
+                SIMPLE EMERGENCY WORKFLOW
+
+            </div>
+
+
+            <h2>
+
+                From Emergency To
+
+                <span>Immediate Action.</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="workflow">
+
+
+            <div class="step">
+
+                <div class="step-number">01</div>
+
+                <div class="step-icon">
+
+                    <i class="fa-solid fa-truck-medical"></i>
+
+                </div>
+
+
+                <h3>Patient Arrives</h3>
+
+
+                <p>
+
+                    The patient reaches the emergency department
+                    and requires immediate medical attention.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-line"></div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">02</div>
+
+                <div class="step-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+
+                <h3>Secure Identification</h3>
+
+
+                <p>
+
+                    Critical patients use biometric or iris scanning,
+                    while non-critical patients use QR identification.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-line"></div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">03</div>
+
+                <div class="step-icon">
+
+                    <i class="fa-solid fa-file-waveform"></i>
+
+                </div>
+
+
+                <h3>Medical Data Access</h3>
+
+
+                <p>
+
+                    Essential patient information and previous
+                    medical records become available quickly.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-line"></div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">04</div>
+
+                <div class="step-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </div>
+
+
+                <h3>Family Is Notified</h3>
+
+
+                <p>
+
+                    The emergency contact receives the hospital
+                    name and location for written consent.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <div class="about-left">
+
+                <div class="small-title">
+
+                    <span></span>
+
+                    OUR PURPOSE
+
+                </div>
+
+
+                <h2>
+
+                    Every Second Saved
+
+                    <span>Can Save A Life.</span>
+
+                </h2>
+
+
+                <p>
+
+                    In emergencies, valuable time can be lost collecting
+                    patient details, identifying unconscious patients and
+                    waiting for documentation.
+
+                    Lifora aims to reduce this delay through intelligent
+                    identification and automated emergency communication.
+
+                </p>
+
+            </div>
+
+
+            <div class="purpose-box">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+
+                <h3>
+
+                    Faster Identification.
+                    Faster Information.
+                    Faster Care.
+
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DEVELOPERS SECTION
+    ========================== -->
+
+    <section class="developers-section" id="developers">
+
+
+        <div class="section-heading">
+
+            <div class="small-title">
+
+                <span></span>
+
+                THE MINDS BEHIND LIFORA
+
+            </div>
+
+
+            <h2>
+
+                Meet Our
+
+                <span>Development Team</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="developer-grid">
+
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+
+                    PK
+
+                </div>
+
+                <h3>Pravneer Kaur</h3>
+
+                <p>Developer</p>
+
+            </div>
+
+
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+
+                    PP
+
+                </div>
+
+                <h3>Priti Patel</h3>
+
+                <p>Developer</p>
+
+            </div>
+
+
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+
+                    AP
+
+                </div>
+
+                <h3>Aesha Patel</h3>
+
+                <p>Developer</p>
+
+            </div>
+
+
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+
+                    CB
+
+                </div>
+
+                <h3>Choudhary Babita</h3>
+
+                <p>Developer</p>
+
+            </div>
+
+
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+
+                    RU
+
+                </div>
+
+                <h3>Rathva Urvashi</h3>
+
+                <p>Developer</p>
+
+            </div>
+
+
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+
+                    PJ
+
+                </div>
+
+                <h3>Parvathy J.S.</h3>
+
+                <p>Developer</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+            <h2>Lifora</h2>
+
+        </div>
+
+
+        <p>
+
+            Intelligent emergency healthcare.
+            Reducing delays when every second matters.
+
+        </p>
+
+
+        <div class="footer-bottom">
+
+            <span>
+
+                © 2026 Lifora. Developed for Smart India Hackathon.
+
+            </span>
+
+
+            <span>
+
+                Developed by Pravneer Kaur, Priti Patel,
+                Aesha Patel, Choudhary Babita,
+                Rathva Urvashi & Parvathy J.S.
+
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT FILE -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
