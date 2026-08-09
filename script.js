@@ -952,6 +952,11 @@ updateWorkflowStep(3);
    EMERGENCY CONTACT NOTIFICATION
 ========================================= */
 
+/* =========================================
+   PART 6 - CONNECT HOSPITAL DETAILS
+   TO EMERGENCY CONTACT
+========================================= */
+
 function notifyEmergencyContact() {
 
     const existingModal =
@@ -963,6 +968,282 @@ function notifyEmergencyContact() {
         existingModal.remove();
 
     }
+
+
+    /* Get saved hospital information */
+
+    const savedHospitalName =
+        localStorage.getItem(
+            "liforaHospitalName"
+        ) || "Hospital Name Not Available";
+
+
+    const savedHospitalLocation =
+        localStorage.getItem(
+            "liforaHospitalLocation"
+        ) || "Hospital Location Not Available";
+
+
+    const modal =
+        document.createElement("div");
+
+
+    modal.id = "liforaModal";
+
+    modal.className = "lifora-modal";
+
+
+    modal.innerHTML = `
+
+        <div class="modal-overlay"
+             onclick="closeLiforaModal()">
+        </div>
+
+
+        <div class="modal-box notification-modal">
+
+
+            <button class="close-modal"
+                    onclick="closeLiforaModal()">
+
+                &times;
+
+            </button>
+
+
+            <div class="notification-top">
+
+                <div class="notification-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </div>
+
+
+                <span>EMERGENCY ALERT</span>
+
+
+                <h2>Notify Emergency Contact</h2>
+
+
+                <p>
+
+                    The patient's registered emergency contact will
+                    receive the hospital name, location and instructions
+                    regarding written consent.
+
+                </p>
+
+            </div>
+
+
+            <!-- HOSPITAL INFORMATION -->
+
+            <div class="notification-details">
+
+
+                <div class="notification-detail">
+
+                    <div class="detail-icon">
+
+                        <i class="fa-solid fa-hospital"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Hospital Name</span>
+
+                        <strong>
+
+                            ${savedHospitalName}
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="notification-detail">
+
+                    <div class="detail-icon">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Hospital Location</span>
+
+                        <strong>
+
+                            ${savedHospitalLocation}
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="notification-detail">
+
+                    <div class="detail-icon consent-icon">
+
+                        <i class="fa-solid fa-file-signature"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Required Action</span>
+
+                        <strong>
+
+                            Please reach the hospital for written consent
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION CARD -->
+
+            <div class="hospital-location-card">
+
+
+                <div class="location-card-top">
+
+                    <div>
+
+                        <span class="location-label">
+
+                            <i class="fa-solid fa-location-crosshairs"></i>
+
+                            HOSPITAL DESTINATION
+
+                        </span>
+
+
+                        <h3>
+
+                            ${savedHospitalName}
+
+                        </h3>
+
+                    </div>
+
+
+                    <div class="location-status">
+
+                        <span></span>
+
+                        Location Shared
+
+                    </div>
+
+                </div>
+
+
+                <div class="location-map-placeholder">
+
+
+                    <div class="map-grid"></div>
+
+
+                    <div class="map-road road-one"></div>
+
+                    <div class="map-road road-two"></div>
+
+
+                    <div class="hospital-map-pin">
+
+                        <i class="fa-solid fa-hospital"></i>
+
+                    </div>
+
+
+                    <div class="map-location-text">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        ${savedHospitalLocation}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALERT PREVIEW -->
+
+            <div class="message-preview">
+
+
+                <div class="message-title">
+
+                    <i class="fa-solid fa-message"></i>
+
+                    Emergency Alert Preview
+
+                </div>
+
+
+                <p>
+
+                    <strong>EMERGENCY ALERT:</strong>
+
+                    The patient has been admitted to
+                    <strong>${savedHospitalName}</strong>.
+
+                    Location:
+                    <strong>${savedHospitalLocation}</strong>.
+
+                    Please reach the hospital as soon as possible
+                    for further documentation and written consent.
+
+                </p>
+
+            </div>
+
+
+            <button class="send-alert-btn"
+                    onclick="sendEmergencyAlert()">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send Emergency Alert
+
+            </button>
+
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(modal);
+
+
+    setTimeout(() => {
+
+        modal.classList.add("show-modal");
+
+    }, 10);
+
+}
 
 
     const modal =
