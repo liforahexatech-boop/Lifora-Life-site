@@ -4553,3 +4553,104 @@ footer > p {
     }
 
 }
+
+/* =========================================
+   PART 7 - CONTACT FORM MODAL
+========================================= */
+
+.contact-form-heading {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+
+.contact-form-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    border-radius: 22px;
+    background: #eef4ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+
+.contact-form-heading span {
+    display: block;
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+}
+
+
+.contact-form-heading h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+
+.contact-form-heading p {
+    color: #747485;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.contact-form .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.contact-form .form-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e5e5ef;
+    border-radius: 13px;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+
+.contact-form .form-group input:focus {
+    border-color: #4f46b5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 181, 0.08);
+}
+
+
+.save-contact-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 13px;
+    background: #2563eb;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+
+.save-contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+}
+
+
+.save-contact-btn i {
+    margin-right: 7px;
+}
