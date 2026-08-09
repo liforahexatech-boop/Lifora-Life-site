@@ -1650,6 +1650,358 @@
     </div>
 
 </section>
+    <!-- =========================================
+     PART 7 - EMERGENCY PROFILE CENTER
+========================================= -->
+
+<section class="emergency-profile-section" id="emergency-profile">
+
+    <div class="emergency-profile-container">
+
+        <div class="profile-section-heading">
+
+            <div>
+
+                <div class="small-title">
+                    <span></span>
+                    EMERGENCY INFORMATION ACCESS
+                </div>
+
+                <h2>
+                    Patient
+                    <span>Emergency Profile</span>
+                </h2>
+
+                <p>
+                    Essential information can be reviewed quickly by
+                    authorized healthcare personnel after secure
+                    patient identification.
+                </p>
+
+            </div>
+
+            <div class="profile-security-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                Authorized Access Only
+            </div>
+
+        </div>
+
+
+        <div class="emergency-profile-grid">
+
+
+            <!-- PATIENT MEDICAL INFORMATION -->
+
+            <div class="profile-main-card">
+
+                <div class="profile-card-top">
+
+                    <div class="patient-profile-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <span>IDENTIFIED PATIENT</span>
+                        <h3 id="profilePatientName">
+                            Patient Information
+                        </h3>
+                    </div>
+
+                    <div class="profile-verified">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Verified
+                    </div>
+
+                </div>
+
+
+                <div class="profile-divider"></div>
+
+
+                <div class="medical-information-grid">
+
+
+                    <div class="medical-info-box blood-info">
+
+                        <div class="medical-info-icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+
+                        <div>
+                            <span>Blood Group</span>
+                            <strong id="patientBloodGroup">
+                                Not Available
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="medical-info-box allergy-info">
+
+                        <div class="medical-info-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+
+                        <div>
+                            <span>Allergies</span>
+                            <strong id="patientAllergies">
+                                Check Record
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="medical-info-box history-info">
+
+                        <div class="medical-info-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div>
+                            <span>Medical History</span>
+                            <strong id="patientMedicalHistory">
+                                Available
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="medical-info-box medication-info">
+
+                        <div class="medical-info-icon">
+                            <i class="fa-solid fa-pills"></i>
+                        </div>
+
+                        <div>
+                            <span>Current Medication</span>
+                            <strong id="patientMedication">
+                                Check Record
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-warning">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <p>
+                        Emergency information shown in this prototype
+                        is intended for demonstration purposes.
+                        Actual access should require authentication,
+                        authorization and appropriate patient consent
+                        or legally permitted emergency access.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMERGENCY CONTACT -->
+
+            <div class="emergency-contact-card">
+
+                <div class="contact-card-header">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+
+                    <div>
+                        <span>REGISTERED CONTACT</span>
+                        <h3>Emergency Contact</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-information">
+
+
+                    <div class="contact-row">
+
+                        <span>
+                            <i class="fa-solid fa-user"></i>
+                            Contact Name
+                        </span>
+
+                        <strong id="emergencyContactName">
+                            Not Available
+                        </strong>
+
+                    </div>
+
+
+                    <div class="contact-row">
+
+                        <span>
+                            <i class="fa-solid fa-heart"></i>
+                            Relationship
+                        </span>
+
+                        <strong id="emergencyContactRelation">
+                            Not Available
+                        </strong>
+
+                    </div>
+
+
+                    <div class="contact-row">
+
+                        <span>
+                            <i class="fa-solid fa-phone"></i>
+                            Phone Number
+                        </span>
+
+                        <strong id="emergencyContactPhone">
+                            Not Available
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="edit-contact-btn"
+                    onclick="openEmergencyContactForm()"
+                >
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Add / Edit Emergency Contact
+
+                </button>
+
+
+                <button
+                    class="profile-notify-btn"
+                    onclick="notifyEmergencyContact()"
+                >
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    Notify Emergency Contact
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK EMERGENCY TIMELINE -->
+
+        <div class="emergency-timeline">
+
+            <div class="timeline-heading">
+
+                <h3>
+                    <i class="fa-solid fa-bolt"></i>
+                    Lifora Emergency Response Flow
+                </h3>
+
+                <span>Designed to reduce documentation delays</span>
+
+            </div>
+
+
+            <div class="timeline-steps">
+
+
+                <div class="timeline-step">
+
+                    <div class="timeline-number">
+                        01
+                    </div>
+
+                    <h4>Identify</h4>
+
+                    <p>
+                        Biometrics, iris scan or secure QR
+                        identification.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+
+                <div class="timeline-step">
+
+                    <div class="timeline-number">
+                        02
+                    </div>
+
+                    <h4>Access</h4>
+
+                    <p>
+                        Retrieve essential emergency information.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+
+                <div class="timeline-step">
+
+                    <div class="timeline-number">
+                        03
+                    </div>
+
+                    <h4>Notify</h4>
+
+                    <p>
+                        Share hospital name and location with
+                        the emergency contact.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+
+                <div class="timeline-step">
+
+                    <div class="timeline-number">
+                        04
+                    </div>
+
+                    <h4>Consent</h4>
+
+                    <p>
+                        Emergency contact reaches the hospital
+                        for written consent.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
     <!-- =========================
          DEVELOPERS SECTION
     ========================== -->
