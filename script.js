@@ -1612,3 +1612,252 @@ function updateWorkflowStep(
     );
 
 }
+/* =========================================
+   PART 5 - HOSPITAL DASHBOARD FUNCTIONS
+========================================= */
+
+
+/* SAVE HOSPITAL DETAILS */
+
+function saveHospitalDetails() {
+
+    const hospitalName =
+        document.getElementById(
+            "dashboardHospitalName"
+        ).value.trim();
+
+
+    const hospitalLocation =
+        document.getElementById(
+            "dashboardHospitalLocation"
+        ).value.trim();
+
+
+    if (!hospitalName || !hospitalLocation) {
+
+        alert(
+            "Please enter both hospital name and hospital location."
+        );
+
+        return;
+
+    }
+
+
+    /* Store details in browser */
+
+    localStorage.setItem(
+        "liforaHospitalName",
+        hospitalName
+    );
+
+
+    localStorage.setItem(
+        "liforaHospitalLocation",
+        hospitalLocation
+    );
+
+
+    const saveButton =
+        document.querySelector(
+            ".save-hospital-btn"
+        );
+
+
+    saveButton.innerHTML = `
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        Hospital Details Saved
+
+    `;
+
+
+    setTimeout(() => {
+
+        saveButton.innerHTML = `
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Hospital Details
+
+        `;
+
+    }, 2500);
+
+}
+
+
+/* LOAD SAVED HOSPITAL DETAILS */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const savedHospitalName =
+            localStorage.getItem(
+                "liforaHospitalName"
+            );
+
+
+        const savedHospitalLocation =
+            localStorage.getItem(
+                "liforaHospitalLocation"
+            );
+
+
+        const hospitalNameInput =
+            document.getElementById(
+                "dashboardHospitalName"
+            );
+
+
+        const hospitalLocationInput =
+            document.getElementById(
+                "dashboardHospitalLocation"
+            );
+
+
+        if (
+            savedHospitalName &&
+            hospitalNameInput
+        ) {
+
+            hospitalNameInput.value =
+                savedHospitalName;
+
+        }
+
+
+        if (
+            savedHospitalLocation &&
+            hospitalLocationInput
+        ) {
+
+            hospitalLocationInput.value =
+                savedHospitalLocation;
+
+        }
+
+    }
+);
+
+
+/* UPDATE EMERGENCY STATUS */
+
+function updateDashboardStatus(
+    identification,
+    medical,
+    contact
+) {
+
+    const identificationStatus =
+        document.getElementById(
+            "identificationStatus"
+        );
+
+
+    const medicalStatus =
+        document.getElementById(
+            "medicalStatus"
+        );
+
+
+    const contactStatus =
+        document.getElementById(
+            "contactStatus"
+        );
+
+
+    if (identificationStatus && identification) {
+
+        identificationStatus.innerText =
+            "Verified";
+
+        identificationStatus.classList.add(
+            "completed-status"
+        );
+
+    }
+
+
+    if (medicalStatus && medical) {
+
+        medicalStatus.innerText =
+            "Accessed";
+
+        medicalStatus.classList.add(
+            "completed-status"
+        );
+
+    }
+
+
+    if (contactStatus && contact) {
+
+        contactStatus.innerText =
+            "Notified";
+
+        contactStatus.classList.add(
+            "completed-status"
+        );
+
+    }
+
+}
+
+
+/* UPDATE STATUS INDICATORS */
+
+function activateStatusIndicators() {
+
+    const indicators =
+        document.querySelectorAll(
+            ".status-indicator"
+        );
+
+
+    indicators.forEach(
+        function(indicator) {
+
+            indicator.classList.remove(
+                "waiting"
+            );
+
+            indicator.classList.add(
+                "success-status"
+            );
+
+        }
+    );
+
+}
+
+
+/* UPDATE WORKFLOW STEPS */
+
+function updateWorkflowStep(
+    stepNumber
+) {
+
+    const workflowItems =
+        document.querySelectorAll(
+            ".workflow-bar-item"
+        );
+
+
+    workflowItems.forEach(
+        function(item, index) {
+
+            if (index < stepNumber) {
+
+                item.classList.add(
+                    "active-workflow"
+                );
+
+            }
+
+        }
+    );
+
+}
