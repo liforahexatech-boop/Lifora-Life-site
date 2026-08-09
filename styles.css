@@ -5310,3 +5310,843 @@ footer > p {
     width: 20px;
     color: #4f46b5;
 }
+
+/* =========================================
+   PART 9 - LIFORA PREMIUM VISUAL UPGRADE
+   Paste at the VERY BOTTOM of style.css
+========================================= */
+
+
+/* MAIN WEBSITE COLORS */
+
+:root {
+
+    --lifora-black: #070912;
+    --lifora-dark: #0d1020;
+    --lifora-card: rgba(18, 22, 40, 0.82);
+
+    --lifora-blue: #4f8cff;
+    --lifora-light-blue: #7ab0ff;
+
+    --lifora-red: #ff4b5c;
+    --lifora-dark-red: #c91f38;
+
+    --lifora-purple: #8b5cf6;
+
+    --lifora-green: #2dd881;
+
+    --lifora-text: #f4f7ff;
+    --lifora-muted: #a7afc2;
+
+    --lifora-border:
+        rgba(255, 255, 255, 0.10);
+
+}
+
+
+/* WEBSITE BACKGROUND */
+
+body {
+
+    background:
+        radial-gradient(
+            circle at 5% 35%,
+            rgba(255, 50, 75, 0.15),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 95% 40%,
+            rgba(59, 130, 246, 0.16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #060810,
+            #0c1020,
+            #070912
+        );
+
+    color: var(--lifora-text);
+
+}
+
+
+/* SECTIONS */
+
+section {
+
+    position: relative;
+
+    background:
+        transparent !important;
+
+}
+
+
+/* DARK GRADIENT SEPARATORS */
+
+.features-section,
+.emergency-profile-section,
+.simulation-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 9, 18, 0.92),
+            rgba(13, 16, 32, 0.96)
+        ) !important;
+
+}
+
+
+/* =========================================
+   GLASSMORPHISM CARDS
+========================================= */
+
+.feature-card,
+.profile-main-card,
+.emergency-contact-card,
+.simulation-card,
+.emergency-timeline,
+.simulation-info-box,
+.medical-info-box,
+.hospital-location-card {
+
+    background:
+        rgba(18, 23, 43, 0.75) !important;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10) !important;
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* =========================================
+   TEXT COLORS
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+strong {
+
+    color:
+        var(--lifora-text) !important;
+
+}
+
+
+p {
+
+    color:
+        var(--lifora-muted) !important;
+
+}
+
+
+.small-title,
+.profile-card-top span,
+.contact-card-header span,
+.simulation-case-info span,
+.medical-info-box span,
+.contact-row span {
+
+    color:
+        var(--lifora-light-blue) !important;
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+nav,
+.navbar {
+
+    background:
+        rgba(7, 9, 18, 0.78) !important;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+        blur(20px);
+
+}
+
+
+nav a,
+.nav-links a {
+
+    color:
+        #d9e2f3 !important;
+
+}
+
+
+nav a:hover,
+.nav-links a:hover {
+
+    color:
+        var(--lifora-blue) !important;
+
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(255, 45, 75, 0.20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 55%,
+            rgba(59, 130, 246, 0.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #060810,
+            #0a0e1c
+        ) !important;
+
+}
+
+
+.hero h1 {
+
+    text-shadow:
+        0 10px 40px
+        rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* LIFORA LOGO */
+
+.logo,
+.nav-logo {
+
+    color:
+        white !important;
+
+    text-shadow:
+        0 0 20px
+        rgba(79, 140, 255, 0.35);
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+}
+
+
+.get-started-btn,
+.start-simulation-btn,
+.simulation-next-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #315efb,
+            #6b4eff
+        ) !important;
+
+    color:
+        white !important;
+
+    box-shadow:
+        0 12px 30px
+        rgba(49, 94, 251, 0.28);
+
+}
+
+
+.get-started-btn:hover,
+.start-simulation-btn:hover,
+.simulation-next-btn:hover {
+
+    box-shadow:
+        0 18px 40px
+        rgba(79, 140, 255, 0.40);
+
+}
+
+
+/* CRITICAL PATIENT */
+
+.critical-choice {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 60, 80, 0.12),
+            rgba(255, 255, 255, 0.02)
+        ) !important;
+
+}
+
+
+.critical-choice:hover {
+
+    border-color:
+        var(--lifora-red) !important;
+
+    box-shadow:
+        0 20px 45px
+        rgba(255, 55, 75, 0.18) !important;
+
+}
+
+
+/* NON CRITICAL */
+
+.noncritical-choice {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59, 130, 246, 0.12),
+            rgba(255, 255, 255, 0.02)
+        ) !important;
+
+}
+
+
+.noncritical-choice:hover {
+
+    border-color:
+        var(--lifora-blue) !important;
+
+}
+
+
+/* SOS BUTTON */
+
+.emergency-sos,
+.sos-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff334b,
+            #b80f2a
+        ) !important;
+
+    color:
+        white !important;
+
+    box-shadow:
+        0 15px 35px
+        rgba(255, 45, 65, 0.30);
+
+}
+
+
+/* FIND BLOOD */
+
+.find-blood-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #20c979,
+            #12995b
+        ) !important;
+
+    color:
+        white !important;
+
+}
+
+
+/* =========================================
+   EMERGENCY PROFILE
+========================================= */
+
+.patient-profile-icon {
+
+    background:
+        rgba(79, 140, 255, 0.15) !important;
+
+    color:
+        var(--lifora-blue) !important;
+
+}
+
+
+.contact-icon {
+
+    background:
+        rgba(255, 75, 92, 0.14) !important;
+
+    color:
+        var(--lifora-red) !important;
+
+}
+
+
+.medical-info-box {
+
+    background:
+        rgba(255, 255, 255, 0.035) !important;
+
+}
+
+
+.blood-info .medical-info-icon {
+
+    background:
+        rgba(255, 60, 80, 0.14) !important;
+
+    color:
+        #ff5a6b !important;
+
+}
+
+
+.allergy-info .medical-info-icon {
+
+    background:
+        rgba(255, 196, 0, 0.12) !important;
+
+    color:
+        #ffd24a !important;
+
+}
+
+
+.history-info .medical-info-icon {
+
+    background:
+        rgba(59, 130, 246, 0.14) !important;
+
+    color:
+        var(--lifora-blue) !important;
+
+}
+
+
+.medication-info .medical-info-icon {
+
+    background:
+        rgba(139, 92, 246, 0.15) !important;
+
+    color:
+        var(--lifora-purple) !important;
+
+}
+
+
+/* WARNING */
+
+.profile-warning {
+
+    background:
+        rgba(255, 174, 0, 0.10) !important;
+
+    border:
+        1px solid
+        rgba(255, 174, 0, 0.18);
+
+    color:
+        #ffd36a !important;
+
+}
+
+
+/* =========================================
+   CONTACT BUTTONS
+========================================= */
+
+.edit-contact-btn {
+
+    background:
+        rgba(79, 140, 255, 0.10) !important;
+
+    color:
+        var(--lifora-light-blue) !important;
+
+}
+
+
+.profile-notify-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb800,
+            #f08a00
+        ) !important;
+
+    color:
+        #16120a !important;
+
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline-number {
+
+    background:
+        linear-gradient(
+            135deg,
+            #315efb,
+            #754cff
+        ) !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(79, 140, 255, 0.25);
+
+}
+
+
+.timeline-arrow {
+
+    color:
+        var(--lifora-blue) !important;
+
+}
+
+
+/* =========================================
+   SIMULATION SECTION
+========================================= */
+
+.simulation-section {
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(255, 50, 75, 0.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(79, 140, 255, 0.10),
+            transparent 30%
+        ),
+
+        #090c18 !important;
+
+}
+
+
+.simulation-topbar {
+
+    background:
+        rgba(255, 255, 255, 0.025) !important;
+
+    border-color:
+        rgba(255, 255, 255, 0.08) !important;
+
+}
+
+
+.simulation-progress {
+
+    background:
+        rgba(255, 255, 255, 0.025) !important;
+
+}
+
+
+.simulation-progress-item div {
+
+    background:
+        rgba(255, 255, 255, 0.08) !important;
+
+    color:
+        #9da6bb !important;
+
+}
+
+
+.simulation-progress-item.active div {
+
+    background:
+        linear-gradient(
+            135deg,
+            #315efb,
+            #754cff
+        ) !important;
+
+    color:
+        white !important;
+
+}
+
+
+.simulation-progress-item.completed div {
+
+    background:
+        #22c55e !important;
+
+    color:
+        white !important;
+
+}
+
+
+.simulation-progress-line {
+
+    background:
+        rgba(255, 255, 255, 0.10) !important;
+
+}
+
+
+/* SIMULATION ICON */
+
+.simulation-main-icon {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 75, 92, 0.20),
+            rgba(79, 140, 255, 0.10)
+        ) !important;
+
+    color:
+        var(--lifora-red) !important;
+
+    box-shadow:
+        0 0 45px
+        rgba(255, 60, 80, 0.18);
+
+}
+
+
+/* SCANNER */
+
+.scanner-circle {
+
+    border-color:
+        var(--lifora-blue) !important;
+
+    box-shadow:
+        0 0 40px
+        rgba(79, 140, 255, 0.20);
+
+}
+
+
+.scanner-circle::after {
+
+    background:
+        var(--lifora-red) !important;
+
+    box-shadow:
+        0 0 15px
+        var(--lifora-red);
+
+}
+
+
+/* =========================================
+   MODALS
+========================================= */
+
+.modal-box {
+
+    background:
+        linear-gradient(
+            145deg,
+            #161b2d,
+            #0c1020
+        ) !important;
+
+    color:
+        white !important;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12) !important;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.55) !important;
+
+}
+
+
+.modal-overlay {
+
+    background:
+        rgba(0, 0, 0, 0.75) !important;
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+.contact-form .form-group input {
+
+    background:
+        rgba(255, 255, 255, 0.06) !important;
+
+    color:
+        white !important;
+
+    border-color:
+        rgba(255, 255, 255, 0.10) !important;
+
+}
+
+
+.contact-form .form-group input::placeholder {
+
+    color:
+        #747c90;
+
+}
+
+
+.contact-form .form-group label {
+
+    color:
+        #dce4f5 !important;
+
+}
+
+
+/* =========================================
+   HOSPITAL MAP
+========================================= */
+
+.location-map-placeholder {
+
+    background:
+        linear-gradient(
+            135deg,
+            #111a31,
+            #0b1020
+        ) !important;
+
+    border-color:
+        rgba(79, 140, 255, 0.20) !important;
+
+}
+
+
+.map-grid {
+
+    opacity: 0.35;
+
+}
+
+
+.map-road {
+
+    background:
+        rgba(255, 255, 255, 0.10) !important;
+
+    border-color:
+        rgba(255, 255, 255, 0.08) !important;
+
+}
+
+
+.map-location-text {
+
+    background:
+        rgba(9, 12, 24, 0.85) !important;
+
+    color:
+        #dce5f7 !important;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    background:
+        #05070d !important;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    color:
+        var(--lifora-muted) !important;
+
+}
+
+
+/* =========================================
+   PREMIUM CARD HOVER
+========================================= */
+
+.feature-card,
+.profile-main-card,
+.emergency-contact-card,
+.simulation-card {
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+
+}
+
+
+.feature-card:hover,
+.profile-main-card:hover,
+.emergency-contact-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(79, 140, 255, 0.28) !important;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.35);
+
+}
