@@ -3836,6 +3836,265 @@ footer > p {
 
 
     .dashboard-heading h2 {
+       /* =========================================
+   PART 6 - HOSPITAL LOCATION CARD
+========================================= */
+
+.hospital-location-card {
+    margin: 22px 0;
+    padding: 18px;
+    background: #fafaff;
+    border: 1px solid #e5e5ef;
+    border-radius: 20px;
+}
+
+
+.location-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+.location-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #4f46b5;
+    margin-bottom: 6px;
+}
+
+
+.location-label i {
+    margin-right: 5px;
+}
+
+
+.location-card-top h3 {
+    font-size: 15px;
+}
+
+
+.location-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    background: #eafbf0;
+    border-radius: 20px;
+    color: #159447;
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+.location-status span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: locationPulse 1.5s infinite;
+}
+
+
+@keyframes locationPulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+
+}
+
+
+.location-map-placeholder {
+    position: relative;
+    height: 175px;
+    overflow: hidden;
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            135deg,
+            #eef3ff,
+            #f7f7fb
+        );
+    border: 1px solid #e0e5f5;
+}
+
+
+/* MAP GRID */
+
+.map-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(79, 70, 181, 0.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(79, 70, 181, 0.07) 1px,
+            transparent 1px
+        );
+
+    background-size: 25px 25px;
+}
+
+
+/* MAP ROADS */
+
+.map-road {
+    position: absolute;
+    height: 15px;
+    width: 150%;
+    background: white;
+    border: 1px solid #e3e3ec;
+    border-radius: 30px;
+    box-shadow: 0 3px 10px rgba(40, 40, 70, 0.05);
+}
+
+
+.road-one {
+    top: 35%;
+    left: -20%;
+    transform: rotate(-18deg);
+}
+
+
+.road-two {
+    top: 58%;
+    left: -20%;
+    transform: rotate(24deg);
+}
+
+
+/* HOSPITAL MAP PIN */
+
+.hospital-map-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 55px;
+    height: 55px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50% 50% 50% 0;
+
+    background: #ef4444;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-45deg);
+
+    box-shadow:
+        0 10px 25px rgba(239, 68, 68, 0.3);
+
+    animation: pinBounce 1.8s ease-in-out infinite;
+}
+
+
+.hospital-map-pin i {
+    transform: rotate(45deg);
+}
+
+
+@keyframes pinBounce {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -10px;
+    }
+
+}
+
+
+.map-location-text {
+    position: absolute;
+    left: 15px;
+    bottom: 14px;
+
+    max-width: calc(100% - 30px);
+
+    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 8px 20px rgba(30, 30, 60, 0.08);
+
+    color: #414150;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.map-location-text i {
+    color: #ef4444;
+    margin-right: 5px;
+}
+
+
+/* CONSENT ICON */
+
+.consent-icon {
+    background: #fff8db;
+    color: #b88600;
+}
+
+
+/* RESPONSIVE PART 6 */
+
+@media (max-width: 600px) {
+
+    .location-card-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .location-map-placeholder {
+        height: 150px;
+    }
+
+
+    .map-location-text {
+        font-size: 9px;
+    }
+
+}
         letter-spacing: -2px;
     }
 
