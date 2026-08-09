@@ -288,6 +288,9 @@ function biometricSuccess() {
 
     const modalBox =
         document.querySelector(".modal-box");
+   updateDashboardStatus(true, true, false);
+activateStatusIndicators();
+updateWorkflowStep(3);
 
 
     modalBox.innerHTML = `
@@ -411,6 +414,9 @@ function startIrisScan() {
 
     const modalBox =
         document.querySelector(".modal-box");
+   updateDashboardStatus(true, true, false);
+activateStatusIndicators();
+updateWorkflowStep(3);
 
 
     modalBox.innerHTML = `
@@ -824,6 +830,9 @@ function qrSuccess() {
 
     const modalBox =
         document.querySelector(".modal-box");
+   updateDashboardStatus(true, true, false);
+activateStatusIndicators();
+updateWorkflowStep(3);
 
 
     modalBox.innerHTML = `
@@ -1145,6 +1154,9 @@ function notifyEmergencyContact() {
 
 function sendEmergencyAlert() {
 
+   updateDashboardStatus(true, true, true);
+activateStatusIndicators();
+updateWorkflowStep(4);
     const button =
         document.querySelector(".send-alert-btn");
 
