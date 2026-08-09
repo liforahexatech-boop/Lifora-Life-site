@@ -3305,3 +3305,538 @@ footer > p {
     }
 
 }
+/* =========================================
+   PART 5 - HOSPITAL DASHBOARD
+========================================= */
+
+.hospital-dashboard-section {
+    padding: 120px 7%;
+    background: #f7f7fc;
+}
+
+
+.dashboard-container {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+
+.dashboard-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+
+.dashboard-heading h2 {
+    font-size: clamp(38px, 5vw, 58px);
+    letter-spacing: -3px;
+    line-height: 1.05;
+    margin-bottom: 15px;
+}
+
+
+.dashboard-heading h2 span {
+    color: #4f46b5;
+}
+
+
+.dashboard-heading p {
+    max-width: 620px;
+    color: #747485;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+.dashboard-live-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    background: white;
+    border: 1px solid #e5e5ef;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+.dashboard-pulse {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: dashboardPulse 1.5s infinite;
+}
+
+
+@keyframes dashboardPulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 9px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+
+}
+
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 22px;
+}
+
+
+.dashboard-card {
+    background: white;
+    border: 1px solid #e5e5ef;
+    border-radius: 25px;
+    padding: 28px;
+    transition: 0.3s ease;
+}
+
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(25, 25, 50, 0.08);
+}
+
+
+.dashboard-card-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 25px;
+}
+
+
+.dashboard-card-title h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+
+.dashboard-card-title p {
+    font-size: 11px;
+    color: #858595;
+}
+
+
+.dashboard-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+
+.purple-dashboard-icon {
+    background: #f0eeff;
+    color: #4f46b5;
+}
+
+
+.red-dashboard-icon {
+    background: #fff0f0;
+    color: #ef4444;
+}
+
+
+.yellow-dashboard-icon {
+    background: #fff8db;
+    color: #b88600;
+}
+
+
+/* FORM */
+
+.dashboard-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #555564;
+}
+
+
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e5e5ef;
+    border-radius: 13px;
+    padding: 0 14px;
+    transition: 0.3s;
+}
+
+
+.input-box:focus-within {
+    border-color: #4f46b5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 181, 0.08);
+}
+
+
+.input-box i {
+    color: #4f46b5;
+}
+
+
+.input-box input {
+    width: 100%;
+    padding: 13px 0;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+    background: transparent;
+}
+
+
+.save-hospital-btn {
+    padding: 14px;
+    border-radius: 13px;
+    background: #4f46b5;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 3px;
+    transition: 0.3s;
+}
+
+
+.save-hospital-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(79, 70, 181, 0.25);
+}
+
+
+.save-hospital-btn i {
+    margin-right: 7px;
+}
+
+
+/* PATIENT ACCESS BUTTONS */
+
+.dashboard-access-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+.dashboard-access-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px;
+    text-align: left;
+    background: #fafafa;
+    border: 1px solid #eeeeF5;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+
+.dashboard-access-btn:hover {
+    transform: translateX(5px);
+}
+
+
+.dashboard-access-btn > div {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.critical-access > div {
+    background: #fff0f0;
+    color: #ef4444;
+}
+
+
+.noncritical-access > div {
+    background: #eef4ff;
+    color: #2563eb;
+}
+
+
+.dashboard-access-btn span {
+    flex: 1;
+}
+
+
+.dashboard-access-btn strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+
+.dashboard-access-btn small {
+    display: block;
+    color: #858595;
+    font-size: 10px;
+}
+
+
+.dashboard-access-btn > i {
+    color: #858595;
+    font-size: 12px;
+}
+
+
+.critical-access:hover {
+    border-color: #ef4444;
+}
+
+
+.noncritical-access:hover {
+    border-color: #2563eb;
+}
+
+
+.dashboard-security {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 13px;
+    margin-top: 20px;
+    border-radius: 13px;
+    background: #f7f7fa;
+    color: #858595;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+.dashboard-security i {
+    color: #4f46b5;
+    margin-top: 2px;
+}
+
+
+/* STATUS CARD */
+
+.status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.status-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #eeeeF5;
+}
+
+
+.status-item:last-child {
+    border-bottom: none;
+}
+
+
+.status-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 11px;
+}
+
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+
+.status-indicator.waiting {
+    background: #c8c8d2;
+}
+
+
+.status-indicator.success-status {
+    background: #22c55e;
+}
+
+
+.status-item strong {
+    font-size: 10px;
+    color: #858595;
+}
+
+
+.status-item strong.completed-status {
+    color: #159447;
+}
+
+
+.dashboard-alert-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 13px;
+    background: #f6c900;
+    color: #29220a;
+    font-size: 12px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+
+.dashboard-alert-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(246, 201, 0, 0.25);
+}
+
+
+.dashboard-alert-btn i {
+    margin-right: 7px;
+}
+
+
+/* WORKFLOW BAR */
+
+.dashboard-workflow-bar {
+    margin-top: 28px;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e5e5ef;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.workflow-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #858595;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+.workflow-bar-item div {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #eeeeF5;
+    color: #858595;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.workflow-bar-item.active-workflow {
+    color: #4f46b5;
+}
+
+
+.workflow-bar-item.active-workflow div {
+    background: #4f46b5;
+    color: white;
+}
+
+
+.workflow-bar-line {
+    width: 70px;
+    height: 1px;
+    background: #e1e1ea;
+    margin: 0 15px;
+}
+
+
+/* DASHBOARD RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .status-card {
+        grid-column: span 2;
+    }
+
+
+    .dashboard-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .hospital-dashboard-section {
+        padding: 80px 6%;
+    }
+
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .status-card {
+        grid-column: span 1;
+    }
+
+
+    .dashboard-workflow-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+
+    .workflow-bar-line {
+        width: 1px;
+        height: 25px;
+        margin-left: 16px;
+    }
+
+
+    .dashboard-heading h2 {
+        letter-spacing: -2px;
+    }
+
+}
