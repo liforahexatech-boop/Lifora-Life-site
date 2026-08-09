@@ -806,7 +806,428 @@
     </section>
 
 
+<!-- =========================================
+     HOSPITAL DASHBOARD
+========================================= -->
 
+<section class="hospital-dashboard-section" id="hospital-dashboard">
+
+    <div class="dashboard-container">
+
+
+        <!-- DASHBOARD HEADER -->
+
+        <div class="dashboard-heading">
+
+            <div>
+
+                <div class="small-title">
+
+                    <span></span>
+
+                    AUTHORIZED HOSPITAL ACCESS
+
+                </div>
+
+
+                <h2>
+
+                    Emergency
+
+                    <span>Control Center</span>
+
+                </h2>
+
+
+                <p>
+
+                    A centralized Lifora dashboard designed to help
+                    hospital staff quickly identify patients, reduce
+                    documentation delays and notify emergency contacts.
+
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-live-status">
+
+                <span class="dashboard-pulse"></span>
+
+                Lifora System Active
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DASHBOARD GRID -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- HOSPITAL DETAILS -->
+
+            <div class="dashboard-card hospital-details-card">
+
+                <div class="dashboard-card-title">
+
+                    <div class="dashboard-icon purple-dashboard-icon">
+
+                        <i class="fa-solid fa-hospital"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>Hospital Details</h3>
+
+                        <p>Information shared with emergency contacts</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-form">
+
+
+                    <div class="form-group">
+
+                        <label for="dashboardHospitalName">
+
+                            Hospital Name
+
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-hospital"></i>
+
+
+                            <input
+                                type="text"
+                                id="dashboardHospitalName"
+                                placeholder="Enter hospital name"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="dashboardHospitalLocation">
+
+                            Hospital Location
+
+                        </label>
+
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+
+                            <input
+                                type="text"
+                                id="dashboardHospitalLocation"
+                                placeholder="Enter hospital location"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="save-hospital-btn"
+                        onclick="saveHospitalDetails()"
+                    >
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Hospital Details
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PATIENT IDENTIFICATION -->
+
+            <div class="dashboard-card patient-access-card">
+
+                <div class="dashboard-card-title">
+
+                    <div class="dashboard-icon red-dashboard-icon">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>Patient Identification</h3>
+
+                        <p>Select the appropriate emergency method</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-access-buttons">
+
+
+                    <button
+                        class="dashboard-access-btn critical-access"
+                        onclick="openCriticalPatient()"
+                    >
+
+                        <div>
+
+                            <i class="fa-solid fa-heart-pulse"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>Critical Patient</strong>
+
+                            <small>
+                                Biometric or Iris Scanner
+                            </small>
+
+                        </span>
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+
+                    <button
+                        class="dashboard-access-btn noncritical-access"
+                        onclick="openNonCriticalPatient()"
+                    >
+
+                        <div>
+
+                            <i class="fa-solid fa-qrcode"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>Non-Critical Patient</strong>
+
+                            <small>
+                                Secure QR Identification
+                            </small>
+
+                        </span>
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-security">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <span>
+
+                        Access should be restricted to authorized
+                        healthcare personnel.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LIVE EMERGENCY STATUS -->
+
+            <div class="dashboard-card status-card">
+
+                <div class="dashboard-card-title">
+
+                    <div class="dashboard-icon yellow-dashboard-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>Emergency Status</h3>
+
+                        <p>Current identification workflow</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-list">
+
+
+                    <div class="status-item">
+
+                        <div class="status-info">
+
+                            <span class="status-indicator waiting"></span>
+
+                            <span>Patient Identification</span>
+
+                        </div>
+
+
+                        <strong id="identificationStatus">
+
+                            Waiting
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="status-item">
+
+                        <div class="status-info">
+
+                            <span class="status-indicator waiting"></span>
+
+                            <span>Medical Information</span>
+
+                        </div>
+
+
+                        <strong id="medicalStatus">
+
+                            Not Accessed
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="status-item">
+
+                        <div class="status-info">
+
+                            <span class="status-indicator waiting"></span>
+
+                            <span>Emergency Contact</span>
+
+                        </div>
+
+
+                        <strong id="contactStatus">
+
+                            Pending
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="dashboard-alert-btn"
+                    onclick="notifyEmergencyContact()"
+                >
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    Notify Emergency Contact
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EMERGENCY WORKFLOW BAR -->
+
+        <div class="dashboard-workflow-bar">
+
+            <div class="workflow-bar-item active-workflow">
+
+                <div>01</div>
+
+                <span>Patient Arrives</span>
+
+            </div>
+
+
+            <div class="workflow-bar-line"></div>
+
+
+            <div class="workflow-bar-item">
+
+                <div>02</div>
+
+                <span>Identify Patient</span>
+
+            </div>
+
+
+            <div class="workflow-bar-line"></div>
+
+
+            <div class="workflow-bar-item">
+
+                <div>03</div>
+
+                <span>Access Information</span>
+
+            </div>
+
+
+            <div class="workflow-bar-line"></div>
+
+
+            <div class="workflow-bar-item">
+
+                <div>04</div>
+
+                <span>Notify Contact</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
     <!-- =========================
          DEVELOPERS SECTION
     ========================== -->
